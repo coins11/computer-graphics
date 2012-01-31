@@ -1,0 +1,19 @@
+
+LATEX = platex --interaction=nonstopmode --kanji=utf8
+DVIPDFM = dvipdfmx
+
+DVIPSFLAGS = -P pdf
+
+foreach(n, 1 2):
+	$(n).ps : $(n).png
+		convert $(n).png $(n).ps
+
+s1111365CG2.pdf : report.ps
+	ps2pdf report.ps s1111365CG2.pdf
+
+TEXDEPS = 1.ps 2.ps
+
+LaTeXDocument(report, report)
+
+.DEFAULT : s1111365CG2.pdf
+

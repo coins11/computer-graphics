@@ -1,0 +1,8 @@
+
+open build/Common
+open build/LaTeX
+
+DefineCommandVars()
+
+.SUBDIRS: . 2011-12-06 2011-12-13 2012-01-10
+

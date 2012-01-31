@@ -1,0 +1,18 @@
+
+LATEX = platex --interaction=nonstopmode --kanji=utf8
+DVIPDFM = dvipdfmx
+
+DVIPSFLAGS = -P pdf
+
+1.ps : 1.png
+    convert 1.png 1.ps
+
+s1111365CG3.pdf : report.ps
+	ps2pdf report.ps s1111365CG3.pdf
+
+TEXDEPS = 1.ps
+
+LaTeXDocument(report, report)
+
+.DEFAULT : s1111365CG3.pdf
+
